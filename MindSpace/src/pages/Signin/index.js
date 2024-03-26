@@ -3,7 +3,11 @@ import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-nativ
 
 import * as Animatable from 'react-native-animatable'
 
+import { useNavigation } from '@react-navigation/native'
+
 export default function Signin() {
+    const navigation = useNavigation();
+
     return (
         <View style={styles.container}>
             <Animatable.View animation="fadeInLeft" deLay={500} style={styles.containerHeader}>
@@ -23,14 +27,19 @@ export default function Signin() {
               style={styles.input}
             />
 
-                <TouchableOpacity style={styles.button}>
+                <TouchableOpacity 
+                style={styles.button}
+                onPress={ () => navigation.navigate('Summary')}
+                >
+                    
                     <Text style={styles.buttonText}>Acessar</Text>
                 </TouchableOpacity>
 
-                <TouchableOpacity style={styles.buttonRegister}>
-                    <Text style={styles.registerText}>Não possui uma conta? Cadastre-se!</Text>
-                </TouchableOpacity>
 
+                <TouchableOpacity style={styles.buttonRegister} onPress={() => navigation.navigate('Register')}>
+                <Text style={styles.registerText}>Não possui uma conta? Cadastre-se!</Text>
+
+                </TouchableOpacity>
             </Animatable.View>
 
         </View>
@@ -41,7 +50,7 @@ export default function Signin() {
 const styles = StyleSheet.create({
     container:{
         flex:1,
-        backgroundColor: '#c56e27'
+        backgroundColor: '#dfbaa4'
     },
     containerHeader:{
         marginTop:'50%',
@@ -73,7 +82,7 @@ const styles = StyleSheet.create({
         fontSize: 16,
     },
     button:{
-        backgroundColor:'#c56e27',
+        backgroundColor:'#dfbaa4',
         width: '100%',
         borderRadius: 4,
         paddingVertical: 8,
@@ -91,6 +100,6 @@ const styles = StyleSheet.create({
         alignSelf: 'center'
     },
     registerText:{
-        color: '#c56e27'
+        color: '#dfbaa4'
     }
 })
