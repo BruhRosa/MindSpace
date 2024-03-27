@@ -6,6 +6,7 @@ import Summary from '../pages/Summary'
 import Gif from '../pages/Gif';
 import Alarm from '../pages/Alarm';
 import Register from '../pages/Register';
+import Map from '../pages/Map';
 
 const Stack = createNativeStackNavigator();
 
@@ -46,6 +47,13 @@ export default function Routes(){
             name="Register"
             component={Register}
             options={{ headerShown: false }}
+            />
+
+            <Stack.Screen
+            name="Map"
+            component={Map}
+            options={{ headerShown: false }}
+
             />
 
         </Stack.Navigator>

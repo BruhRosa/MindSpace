@@ -44,7 +44,7 @@ const Register = () => {
         secureTextEntry={true}
       />
        {/* Estilizando o botão diretamente */}
-       <Button style={styles.ButtonText} title="Cadastrar" onPress={handleCadastro} color="#dfbaa4" />
+       <Button style={styles.Button.ButtonText} title="Cadastrar" onPress={handleCadastro} color="#dfbaa4" />
     </View>
   );
 };

@@ -135,6 +135,7 @@ const styles = StyleSheet.create({
     buttonText: {
         color: 'white',
         fontSize: 25,
-    },
+
+    }, 
 });
 
